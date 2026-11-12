@@ -1,0 +1,25 @@
+services:
+  console:
+    build: .
+    image: ocs-console:latest
+    container_name: ocs-console
+    restart: unless-stopped
+    ports:
+      - "8080:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # endurecimento do container (Achado 8)
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    env_file:
+      - .env
+    environment:
+      - PORT=3000
+      - CACHE_TTL=60
+      # DB_HOST / DB_PORT / DB_USER / DB_PASS / DB_NAME vêm do .env
+      # Basic-auth opcional: defina BASIC_USER / BASIC_PASS no .env

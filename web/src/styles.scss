@@ -1,0 +1,174 @@
+/* ===== OCS Console · brand palette (customize these variables) ===== */
+:root {
+  /* --- Brand (fixa nos dois temas) --- */
+  --brand-primary: #76b729;
+  --brand-primary-dark: #4a7d16;
+  --brand-primary-soft: #eef6e3;
+  --brand-secondary: #071132;   /* superfície escura: toolbar / menu / hero */
+  --brand-gray: #a1b1bc;
+
+  /* --- Neutros semânticos (tema CLARO) --- */
+  --brand-bg: #ecf0f1;          /* fundo da página */
+  --brand-text: #1e1e1e;        /* texto do corpo */
+  --surface: #ffffff;           /* cartões, painéis, topbar */
+  --surface-2: #f6f8f9;         /* cabeçalho de card/tabela, nós, hovers sutis */
+  --surface-3: #eef2f4;         /* trilhos de barra/rosca, preenchimentos sutis */
+  --border: #e2e8ee;            /* bordas principais */
+  --border-soft: #eef2f4;       /* divisórias de linha / tracejados */
+  --heading: #071132;           /* secondary usado como TEXTO (títulos/ênfase) */
+  --text-muted: #78909c;        /* texto secundário */
+  --link: #4a7d16;              /* links de texto */
+  --code-bg: #eef1f5;           /* fundo de <code> */
+  --shadow: rgba(0, 0, 0, .06);
+  --shadow-strong: rgba(0, 0, 0, .12);
+  --topbar-bg: #ffffff;
+  --btn-green-hover: var(--brand-primary-dark);
+
+  /* status (fixos nos dois temas) */
+  --danger-bg: #fdecea; --danger-fg: #b71c1c;
+  --warn-bg: #fff3e0;   --warn-fg: #b45309;
+}
+
+/* --- Tema ESCURO --- */
+[data-theme="dark"] {
+  --brand-primary-soft: #23331a;   /* verde sutil escuro p/ chips e hovers */
+  --brand-primary-dark: #93cf5a;   /* verde legível sobre fundo escuro */
+  --brand-secondary: #0b1430;     /* mantém a faixa escura um tom acima do fundo */
+
+  --brand-bg: #0f1629;
+  --brand-text: #e6ebf2;
+  --surface: #161f36;
+  --surface-2: #1d2942;
+  --surface-3: #243150;
+  --border: #2a3654;
+  --border-soft: #22304c;
+  --heading: #eaf0f8;
+  --text-muted: #9fb0c8;
+  --link: #93cf5a;
+  --code-bg: #22304c;
+  --shadow: rgba(0, 0, 0, .45);
+  --shadow-strong: rgba(0, 0, 0, .6);
+  --topbar-bg: #131b30;
+  --btn-green-hover: #5f9b1f;
+
+  --danger-bg: #3a1a1a; --danger-fg: #ff9a8f;
+  --warn-bg: #3a2c14;   --warn-fg: #f4c56b;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--brand-bg);
+  color: var(--brand-text);
+}
+
+/* transição suave ao alternar o tema */
+body, .topbar, .mainnav, .page, section, .panel, .kpi, .wcard, .card, .col, .toc {
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+* { box-sizing: border-box; }
+
+a { color: var(--link); }
+
+.page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+/* Toolbar */
+.app-toolbar {
+  background: var(--brand-secondary) !important;
+  color: #fff !important;
+  border-bottom: 4px solid var(--brand-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.app-toolbar .brand { font-weight: 700; letter-spacing: .5px; }
+.app-toolbar .brand .accent { color: var(--brand-primary); }
+.app-toolbar .spacer { flex: 1 1 auto; }
+.app-toolbar a { color: #fff; text-decoration: none; }
+
+/* Botao acento */
+.btn-green {
+  background: var(--brand-primary) !important;
+  color: #fff !important;
+}
+.btn-green:hover { background: var(--btn-green-hover) !important; }
+
+/* Chips de frescor */
+.freshness {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.freshness .dot { width: 8px; height: 8px; border-radius: 50%; }
+.fresh-ok   { background: var(--brand-primary-soft); color: var(--brand-primary-dark); }
+.fresh-ok   .dot { background: var(--brand-primary); }
+.fresh-warn { background: var(--warn-bg); color: var(--warn-fg); }
+.fresh-warn .dot { background: #f59e0b; }
+.fresh-old  { background: var(--danger-bg); color: var(--danger-fg); }
+.fresh-old  .dot { background: #e53935; }
+
+.muted { color: var(--text-muted); }
+.nowrap { white-space: nowrap; }
+
+.mat-mdc-header-row { background: var(--surface-2); }
+.mat-mdc-row:hover { background: var(--brand-primary-soft); }
+
+/* ===== Angular Material · ajustes de tema escuro ===== */
+[data-theme="dark"] {
+  /* tabelas */
+  .mat-mdc-table { background: transparent; }
+  .mat-mdc-header-cell,
+  .mat-mdc-cell { color: var(--brand-text); border-bottom-color: var(--border-soft); background: transparent; }
+  .mat-mdc-header-cell { color: var(--text-muted); }
+  .mat-mdc-paginator {
+    background: var(--surface);
+    color: var(--text-muted);
+    --mat-paginator-container-text-color: var(--text-muted);
+    --mat-paginator-enabled-icon-color: var(--text-muted);
+    --mat-paginator-disabled-icon-color: var(--border);
+  }
+  .mat-mdc-icon-button { color: var(--text-muted); }
+
+  /* campos de formulário (outline) */
+  .mat-mdc-form-field {
+    --mdc-outlined-text-field-input-text-color: var(--brand-text);
+    --mdc-outlined-text-field-label-text-color: var(--text-muted);
+    --mdc-outlined-text-field-caret-color: var(--brand-primary);
+    --mdc-outlined-text-field-outline-color: var(--border);
+    --mdc-outlined-text-field-hover-outline-color: var(--text-muted);
+    --mdc-outlined-text-field-focus-outline-color: var(--brand-primary);
+    --mdc-outlined-text-field-focus-label-text-color: var(--brand-primary);
+    --mat-form-field-leading-icon-color: var(--text-muted);
+  }
+  .mat-mdc-input-element { color: var(--brand-text); caret-color: var(--brand-primary); }
+  .mat-mdc-form-field-icon-prefix, .mat-mdc-form-field-icon-suffix { color: var(--text-muted); }
+
+  /* botão outline */
+  .mat-mdc-outlined-button:not(:disabled) {
+    color: var(--brand-text);
+    --mdc-outlined-button-outline-color: var(--border);
+  }
+
+  /* grupo de toggle */
+  .mat-button-toggle-group { border-color: var(--border); }
+  .mat-button-toggle-appearance-standard {
+    background: var(--surface);
+    color: var(--text-muted);
+    --mat-standard-button-toggle-divider-color: var(--border);
+  }
+  .mat-button-toggle-appearance-standard.mat-button-toggle-checked {
+    background: var(--brand-primary-soft);
+    color: var(--brand-primary-dark);
+  }
+
+  .mat-elevation-z1 { box-shadow: 0 1px 3px var(--shadow), 0 1px 2px var(--shadow); }
+}

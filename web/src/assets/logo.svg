@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" aria-label="OCS Console logo">
+  <rect width="48" height="48" rx="10" fill="#071132"/>
+  <rect x="12" y="10" width="24" height="6" rx="2" fill="#76b729"/>
+  <rect x="12" y="21" width="24" height="6" rx="2" fill="#4a7d16"/>
+  <rect x="12" y="32" width="24" height="6" rx="2" fill="#76b729"/>
+  <circle cx="16" cy="13" r="1.5" fill="#fff"/>
+  <circle cx="16" cy="24" r="1.5" fill="#fff"/>
+  <circle cx="16" cy="35" r="1.5" fill="#fff"/>
+</svg>
