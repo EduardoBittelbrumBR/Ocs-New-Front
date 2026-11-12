@@ -104,7 +104,7 @@ interface Toc { id: string; label: string; icon: string; }
             <p>By the <code>SERVER_TYPE_FIELD</code> (default <code>fields_6</code>) and <code>SERVER_TYPE_PATTERN</code> (default <code>serv|server</code>) env vars, with a fallback to the OS name.</p>
           </details>
           <details><summary>Can I use a different identity provider?</summary>
-            <p>The BFF uses <code>@azure/msal-node</code> for Microsoft Entra ID. To use a generic OIDC provider (Keycloak, Authentik, Google, etc.), replace the MSAL integration with <code>openid-client</code> — the auth flow structure (login/callback/logout/me) stays the same.</p>
+            <p>The BFF uses <code>&#64;azure/msal-node</code> for Microsoft Entra ID. To use a generic OIDC provider (Keycloak, Authentik, Google, etc.), replace the MSAL integration with <code>openid-client</code> — the auth flow structure (login/callback/logout/me) stays the same.</p>
           </details>
         </section>
       </div>
